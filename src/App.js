@@ -8,21 +8,29 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+import Admin from "./pages/admin/Admin";
+import Layout from "./components/layout/Layout";
+import React from "react";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Platform from "./pages/Platform/Platform";
+import Lesson from "./pages/lesson/Lesson";
+import Chapter from "./pages/lesson/chapter/Chapter";
+import Question from "./pages/lesson/chapter/question/Question";
+import NotFoundPage from "./pages/NotFound";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/">
-            <Route index element={<Home />}></Route>
-            <Route path="login" element={<Login />}></Route>
-            <Route path="users">
-              <Route index element={<List />}></Route>
-              <Route path=":userId" element={<Single />}></Route>
-              <Route path="new" element={<New />}></Route>
-            </Route>
+          <Route path="*" element={<NotFoundPage />}/>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="platform" element={<Platform />} />
+          <Route path="lesson" element={<Lesson />}>
+            <Route path=":lessonId"/>
           </Route>
+          <Route path="chapter/:lessonId" element={<Chapter />}></Route>
+          <Route path="question/:chapterId" element={<Question />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
