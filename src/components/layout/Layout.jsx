@@ -29,6 +29,7 @@ import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 import logo from '../../assets/cerebrum-logo.png';
 import { Link } from 'react-router-dom';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 
 
 const drawerWidth = 240;
@@ -127,10 +128,11 @@ const Layout = ({ children }) => {
     };
 
     const MenuQa = [
-        { 'name': 'Lesson', 'icon': <MenuBookIcon />, 'link': 'lesson' },
-        { 'name': 'Chapter', 'icon': <AutoStoriesIcon />, 'link': 'chapter' },
-        { 'name': 'Question', 'icon': <QuestionAnswerIcon />, 'link': 'question' },
-        { 'name': 'Platform', 'icon': <AppShortcutIcon />, 'link': 'platform' }
+        { 'name': 'Dashboard', 'icon': <DashboardIcon />, 'link': '/' },
+        { 'name': 'Lesson', 'icon': <MenuBookIcon />, 'link': '/lesson' },
+        { 'name': 'Chapter', 'icon': <AutoStoriesIcon />, 'link': '/chapter' },
+        { 'name': 'Question', 'icon': <QuestionAnswerIcon />, 'link': '/question' },
+        { 'name': 'Platform', 'icon': <AppShortcutIcon />, 'link': '/platform' }
     ];
 
 

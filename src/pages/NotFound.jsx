@@ -1,10 +1,18 @@
-import { Typography } from '@mui/material';
-import { Box, Container } from '@mui/system';
+import { Button, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PageNotFound from '../assets/pagenotfound.jpg';
-const NotFoundPage = () => {
+import { useLottie } from "lottie-react";
 
+import notfoundAnimate from "../assets/animate-not-found.json"
+
+const NotFoundPage = () => {
+    const options = {
+        animationData: notfoundAnimate,
+        loop: true
+      };
+    
+      const { View } = useLottie(options);
     return (
         <React.Fragment>
             <Box sx={{
@@ -12,7 +20,7 @@ const NotFoundPage = () => {
                 justifyContent: 'center',
 
             }}>
-                <img src={PageNotFound} />
+                {View}
             </Box>
             <Box sx={{
                 display: 'flex',
@@ -20,7 +28,7 @@ const NotFoundPage = () => {
 
             }}>
                 <Typography>
-                    <Link to="/">Go to Home </Link>
+                    <Link to="/" style={{textDecoration:'none', color:'orange'}}><Button style={{color:'#ff9800'}}>Go Home</Button></Link>
                 </Typography>
             </Box>
         </React.Fragment>
